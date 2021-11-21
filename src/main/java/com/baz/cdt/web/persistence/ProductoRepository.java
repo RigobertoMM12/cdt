@@ -21,6 +21,7 @@ public class ProductoRepository {
     public Producto getUsuarioBySKU(String sku ) {
         return productoCrudRepository.findBySku(sku);
     }
+
     public List<Producto> getUsuarioDescipcion(String descipcion ) {
         return productoCrudRepository.findAllByDescripcionLike("%"+descipcion+"%");
     }

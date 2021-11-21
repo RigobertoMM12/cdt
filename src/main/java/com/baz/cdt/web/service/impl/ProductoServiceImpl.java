@@ -22,6 +22,12 @@ public class ProductoServiceImpl implements ProductoService {
     public Producto getProductoBySKU(String sku) {
         return productoRepository.getUsuarioBySKU(sku);
     }
+
+    @Override
+    public Producto getProductoById(int id) {
+        return  productoRepository.getProducoById(id).get();
+    }
+
     @Override
     public List<Producto> getbyDescripcion(String descripcion) {
         return productoRepository.getUsuarioDescipcion(descripcion);

@@ -31,6 +31,14 @@ public class ProductoController {
         }
         return  new ResponseEntity<>(producto, HttpStatus.OK);
     }
+    @GetMapping("/byId/{id}")
+    public ResponseEntity<?> getbySku(@PathVariable("id") int id){
+        Producto producto= productoService.getProductoById(id);
+        if(producto == null){
+            return  new ResponseEntity<>("Registro no encontrado", HttpStatus.NO_CONTENT);
+        }
+        return  new ResponseEntity<>(producto, HttpStatus.OK);
+    }
     @GetMapping("/byDescripcion/{descripcion}")
     public ResponseEntity<?> getbyDescripcion(@PathVariable("descripcion") String descripcion){
         return  new ResponseEntity<>(productoService.getbyDescripcion(descripcion), HttpStatus.OK);
